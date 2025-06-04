@@ -7,14 +7,15 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import Autoplay from 'embla-carousel-autoplay' 
+
 
 
 export default function Page() {
   return (
     <div className="w-full flex justify-center">
       <Carousel
-      plugins={[Autoplay({ delay: 1000 })]}
+      autoplay={1000}
+      // plugins={[Autoplay({ delay: 1000 })]}
       opts={{
         align: "start",
         loop: true
@@ -22,7 +23,7 @@ export default function Page() {
       className="w-full max-w-sm"
     >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
+        {Array.from({ length: 10 }).map((_, index) => (
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
             <div className="p-1">
               <Card>
